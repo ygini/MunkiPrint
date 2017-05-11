@@ -1,0 +1,3 @@
+[submodule "printer-pkginfo"]
+	path = printer-pkginfo
+	url = https://github.com/grahamgilbert/printer-pkginfo
