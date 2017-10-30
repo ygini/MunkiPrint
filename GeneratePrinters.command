@@ -13,7 +13,8 @@ do
 
 	full_settings_path="${source_for_printers}/${line}"
 	munki_name=$(/usr/libexec/PlistBuddy -c "print name" "${full_settings_path}")
-	pkginfo_path="${munki_pkginfo_printers_folder}/printer_${munki_name}.plist"
+	munki_version=$(/usr/libexec/PlistBuddy -c "print version" "${full_settings_path}")
+	pkginfo_path="${munki_pkginfo_printers_folder}/printer_${munki_name}-${munki_version}.plist"
 
 	"${root_folder}/printer-pkginfo/printer-pkginfo" --plist "${full_settings_path}" > "${pkginfo_path}"
 
